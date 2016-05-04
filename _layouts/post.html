@@ -1,0 +1,97 @@
+---
+layout: default
+scripts:
+ - /assets/js/components/banner.js
+---
+<div class="post">
+  <header>
+    <div class="dim banner poster" {%if page.banner_image %}style="background-image: url({{page.banner_image}});"{%endif%}>
+    <!-- <video
+      id="landing-teaser"
+      poster="/img/landing-banner.jpg"
+      autoplay=""
+      name="media"
+      loop=""
+      data-height="1280"
+      data-width="720"
+    >
+      <source src="/vid/landing-teaser.mp4" type="video/mp4">
+      </video> -->
+      <div class="content">
+        {% if page.categories[1] %}
+        <h3 class="category">
+          {{ page.categories[1] }}
+        </h3>
+        {% endif %}
+        <h1 class="title">
+          {{page.title}}
+        </h1>
+        {% if page.subheading %}
+        <h2 class="subheading">
+          {{ page.subheading }}
+        </h2>
+        {% endif %}
+      </div>
+
+      <div class="meta">
+        <div class="author">
+          <div class="avatar"></div>
+          <div class="name">Aaron Noel De Leon</div>
+          <div class="date">Jul 27, 2015</div>
+          <div class="length">3 minutes</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article>
+  	<div class="content">
+      {{ content }}
+    </div>
+  </article>
+
+{% comment %}
+  <div class="posts">
+  {%if page.previous %}
+    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="{%if page.next %}half-width {% endif %}poster"
+      {%if page.previous.banner_image %}style="background-image: url({{page.previous.banner_image}});"{%endif%}>
+      <div class="content">
+        <h3 class="category">
+          Previous Article
+        </h3>
+        <!-- <h1 class="title">Singapore</h1>
+        <h2 class="subheading">Biking across the Hipster Country.</h2> -->
+        <h1 class="title">
+          {{page.previous.title}}
+        </h1>
+        {% if page.previous.subheading %}
+        <h2 class="subheading">
+          {{ page.previous.subheading }}
+        </h2>
+        {% endif %}
+      </div>
+    </a>
+  {%endif %}
+  {%if page.next %}
+    <a href="{{ page.next.url | prepend: site.baseurl }}" class="{%if page.previous %}half-width {% endif %}poster"
+      {%if page.next.banner_image %}style="background-image: url({{page.next.banner_image}});"{%endif%}>
+      <div class="content">
+        <h3 class="category">
+          Next Article
+        </h3>
+        <!-- <h1 class="title">Singapore</h1>
+        <h2 class="subheading">Biking across the Hipster Country.</h2> -->
+        <h1 class="title">
+          {{page.next.title}}
+        </h1>
+        {% if page.next.subheading %}
+        <h2 class="subheading">
+          {{ page.next.subheading }}
+        </h2>
+        {% endif %}
+      </div>
+    </a>
+  {%endif %}
+  </div>
+</div>
+{% endcomment %}

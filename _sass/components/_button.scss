@@ -1,0 +1,55 @@
+@mixin button-color($button-color){
+	background: $button-color;
+	color: $inverted-text-color;
+
+	&.inverted {
+		background: transparent;
+		color: $button-color;
+		border-color: $button-color;
+	}
+
+	&:hover {
+		background: darken($button-color, 3%);
+		border-color: transparent;
+		color: $inverted-text-color;
+	}
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+{
+	@include button-color($brand-color);
+	@include heading-text();
+	border-radius: 0.3em;
+	border: transparent solid 0.15em;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 0.875em;
+	line-height: 2;
+	outline: none;
+	padding: 0.3125em 1.25em;
+	transition: all 0.2s ease;
+	white-space: nowrap;
+
+	&.disabled {
+		pointer-events: none;
+	}
+
+	&.small {
+		font-size: 0.75em;
+		padding: 0.15625em 0.9375em;
+	}
+
+	&:hover {
+		border-color: transparent;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	&.secondary {
+		@include button-color($brand-color-2);
+	}
+}

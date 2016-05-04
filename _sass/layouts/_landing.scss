@@ -1,0 +1,198 @@
+.landing {
+	.services {
+		background: white url(/assets/img/services-bg.png) bottom center no-repeat;
+		background-size: $medium-landscape;
+		padding: 4.5em 0;
+
+		.service {
+			@include column(1/2, $gutter: 8);
+
+			label {
+				@include heading-text();
+				font-size: 1.15em;
+				font-weight: bold;
+				letter-spacing: 10px;
+				text-transform: uppercase;
+
+				.icon {
+					margin-right: 0;
+				}
+			}
+
+			p {
+				color: lighten($text-color, 5%);
+				font-size: 1.25em;
+				line-height: 1.5;
+				margin: 1em 0 0;
+
+				&:nth-child(2) {
+					margin-top: 0.5em;
+				}
+			}
+		}
+	}
+
+	.featured {
+		@include cf();
+		padding-top: 4em;
+
+		.mock {
+			background: transparent top center no-repeat;
+			background-size: cover;
+			height: $medium-portrait;
+			overflow: hidden;
+
+			&.left {
+				@include column(3/6);
+				background-image: url(/assets/img/works/vyllage/desktop-mock.png);
+				background-position-x: right;
+			}
+			&.right {
+				@include column(1/6);
+				background-image: url(/assets/img/works/vyllage/iphone-mock.png);
+				background-position-x: left;
+			}
+		}
+		.meta {
+			@include column(2/6);
+			box-sizing: border-box;
+			padding: 0 2.5em;
+			margin-top: 4em;
+		}
+		.logo {
+			height: 1.65em;
+			width: auto;
+		}
+		.category {
+			@include heading-text();
+			border-left: lighten($muted-text-color, 15%) solid 3px;
+			color: $muted-text-color;
+			font-size: 0.8em;
+			font-weight: bold;
+			letter-spacing: 3px;
+			margin-bottom: 3em;
+			padding: 0.25em 1em;
+			text-transform: uppercase;
+		}
+		h3 {
+			color: lighten($text-color, 15%);
+			margin: 0.5em 0 1em 0;
+		}
+		p {
+			color: lighten($text-color, 5%);
+			font-size: 1.25em;
+			margin-top: 0.5em;
+		}
+		.actions {
+			margin-top: 3em;
+		}
+		.button {
+			@include button-color($vyllage-orange);
+		}
+	}
+
+	.works {
+		@include cf();
+		@include column(1);
+
+		.work {
+			background: $text-color center center no-repeat;
+			background-size: cover;
+			box-sizing: border-box;
+			height: 240px;
+			overflow: hidden;
+			padding: 3em;
+			position: relative;
+			text-align: center;
+
+			&:hover {
+				.overlay {
+					opacity: 1;
+				}
+			}
+		}
+
+		.mana {
+			background-image: url(/assets/img/works/mana/banner.jpg);
+			.button {
+				@include button-color(darken($brand-color-2, 10%));
+			}
+		}
+
+		.devportal {
+			background-color: $voyager-violet;
+			background-image: url(/assets/img/works/devportal/banner.jpg);
+
+			.overlay {
+				background: rgba($voyager-violet, 0.98);
+			}
+			.button {
+				@include button-color(darken($voyager-yellow, 10%));
+			}
+		}
+
+		.barrel-and-stone {
+			background-color: $barrel-and-stone-brown;
+			background-image: url(/assets/img/works/barrel-and-stone/banner.jpg);
+
+			.overlay {
+				background: rgba($barrel-and-stone-brown, 0.98);
+			}
+			.button {
+				@include button-color(lighten($barrel-and-stone-brown, 15%));
+			}
+		}
+
+		.logo {
+			@include vertical-center();
+			margin: auto;
+			max-height: 100px;
+			max-width: 250px;
+			text-align: center;
+		}
+
+		.overlay {
+			@include overlay();
+			opacity: 0;
+			background: rgba($text-color, 0.98);
+			color: $inverted-text-color;
+			transition: opacity .3s ease;
+
+			.content {
+				@include vertical-center();
+				padding: 2em;
+
+				p {
+					color: rgba($inverted-text-color, 0.75);
+					font-size: 1.15em;
+				}
+			}
+
+			.title {
+				@include heading-text();
+			}
+
+			.actions {
+				margin-top: 1.75em;
+			}
+		}
+	}
+
+	.contact {
+		background: white url(/assets/img/nelo.jpg) bottom center no-repeat;
+		background-size: contain;
+		clear: both;
+		font-size: 1.35em;
+		padding: 7em 0;
+		text-align: center;
+
+		p {
+			color: lighten($text-color, 5%);
+			font-size: 1.15em;
+		}
+
+		.button {
+			margin-top: 2em;
+		}
+	}
+}

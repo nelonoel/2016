@@ -1,0 +1,59 @@
+header {
+	background: $inverted-text-color;
+	width: 100%;
+	z-index: 2;
+
+	&.inverted {
+		background: $text-color;
+
+		a,.logo {
+			color: $inverted-text-color;
+		}
+	}
+
+	a {
+		@include heading-text();
+		color: $text-color;
+		display: inline-block;
+		padding: 1em;
+		transition: color .2s ease;
+
+		&:hover {
+			color: lighten($brand-color, 3%);
+			text-decoration: none;
+		}
+	}
+
+	.site-title {
+		display: inline-block;
+		float: left;
+
+		a {
+			padding: 1em 0;
+		}
+	}
+
+	.site-nav {
+		display: inline-block;
+		float: right;
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+
+			li {
+				display: inline-block;
+
+				&:last-child a {
+					padding-right: 0;
+				}
+
+				a {
+					font-size: 1.15em;
+					font-weight: 700;
+					padding: 1.4em 1em;
+				}
+			}
+		}
+	}
+}

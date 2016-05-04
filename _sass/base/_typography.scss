@@ -1,0 +1,51 @@
+@mixin base-text() {
+  font-family: $base-font-family;
+}
+
+@mixin heading-text() {
+  font-family: $heading-font-family;
+}
+
+* {
+	text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+	@include base-text();
+  background-color: $background-color;
+  color: $text-color;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include heading-text();
+  font-weight: 700;
+  margin: 0;
+}
+
+p {
+  margin: 0 auto $spacing-unit / 2 auto;
+
+  a {
+    background-image: linear-gradient(to bottom, transparent 98%, $text-color 2%);
+    color: $text-color;
+    transition: none;
+
+    &:hover {
+      background-image: linear-gradient(to bottom, transparent 98%, $brand-color 2%);
+      color: $brand-color;
+      text-decoration: none;
+    }
+  }
+}

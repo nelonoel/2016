@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <a href="{{ post.url }}" class="{%cycle 'class': '', 'half-width ', 'half-width ' %}poster"
+      {%if post.banner_image %}style="background-image: url(../{{post.banner_image}});"{%endif%}>
+      <div class="content">
+        {% if post.categories[1] %}
+          <h3 class="category">
+            {{ post.categories[1] }}
+          </h3>
+        {% endif %}
+        <h1 class="title">
+          {{post.title}}
+        </h1>
+        {% if post.subheading %}
+        <h2 class="subheading">
+          {{ post.subheading }}
+        </h2>
+        {% endif %}
+      </div>
+
+      <!-- <div class="meta">
+        <div class="author">
+          <div class="avatar"></div>
+          <div class="name">Aaron Noel De Leon</div>
+          <div class="date">Published on {{ post.date | date: "%b %-d, %Y" }}</div>
+        </div>
+      </div> -->
+    </a>
+  {% endfor %}
+</div>
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+  {% if paginator.previous_page %}
+  <li class="previous">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}

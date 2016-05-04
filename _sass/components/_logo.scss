@@ -1,0 +1,71 @@
+.logo {
+	color: $text-color;
+	font-size: 1.75em;
+	margin-top: 0.1875em;
+	position: relative;
+
+	&.inverted {
+		color: $inverted-text-color;
+	}
+
+	&:hover .dot .tooltip {
+		opacity: 1;
+		transform: scale(1) translateX(0);
+		transition-delay: .2s;
+	}
+
+
+	.dot {
+		background: $brand-color-2;
+		border-radius: 100%;
+		display: inline-block;
+		height: 7px;
+		left: -12px;
+		position: relative;
+		top: 1px;
+		width: 7px;
+
+		&.available {
+			background: $brand-color-2;
+		}
+
+		&.busy {
+			background: $brand-color;
+		}
+
+		.tooltip {
+			@include heading-text();
+			background: $text-color;
+			border-radius: 3px;
+			border-bottom: darken($text-color, 10%) solid 1px;
+			bottom: 3px;
+			color: $inverted-text-color;
+			font-size: 0.35em;
+			font-weight: bold;
+			left: 15px;
+			opacity: 0;
+			padding: 4px 6px;
+			pointer-events: none;
+			position: absolute;
+			text-transform: uppercase;
+			transform: scale(0) translateX(-20px);
+			transform-origin: bottom left;
+			transition: all .2s ease;
+			white-space: nowrap;
+
+			&:before {
+				border-bottom: 5px solid $text-color;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				bottom: 0;
+				box-shadow: 0 1px 0 darken($text-color, 10%);
+				content: '';
+				display: inline-block;
+				height: 0;
+				left: -4px;
+				position: absolute;
+				width: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,112 @@
+// Images
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+// Figures
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: 0.875em;
+}
+
+// Lists
+ul, ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+   margin-bottom: 0;
+ }
+}
+
+hr {
+  border: none;
+  border-top: #f0f0f0 solid 1px;
+  border-bottom: #fff solid 1px;
+  margin: 1.75em -1em;
+}
+
+// Links
+a {
+  color: $brand-color;
+  text-decoration: none;
+  transition: color .2s ease;
+
+  &:hover {
+    color: lighten($brand-color, 5%);
+    text-decoration: underline;
+  }
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid $gray-color-light;
+  color: $muted-text-color;
+  font-family: $heading-font-family;
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-left: 0;
+  padding: 0.5em 1em;
+}
+
+// Code formatting
+pre,
+code {
+  font-size: 15px;
+  border: $gray-color-light solid 1px;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+  color: $text-color;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.wrapper {
+  @include cf();
+
+  display: block;
+  margin: 0 auto;
+  max-width: $medium-landscape;
+}
+
+// .icon {
+//   > svg {
+//     display: inline-block;
+//     width: 16px;
+//     height: 16px;
+//     vertical-align: middle;
+
+//     path {
+//       fill: $gray-color;
+//     }
+//   }
+// }
+
+// .caption {
+//   color: $muted-text-color;
+//   display: block;
+//   font-family: $heading-font-family;
+//   font-style: italic;
+//   font-size: 0.8em;
+//   margin-top: 0.25em;
+//   text-align: center;
+// }

@@ -1,0 +1,14 @@
+# Site settings
+title: Nelo | Freelance Web Developer & UI Designer
+name: Aaron Noel De Leon
+email: aaronnoeldeleon@gmail.com
+description: A place for all my thoughts and adventures. Follow me on instagram and twitter for more up to the minute updates.
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: "http://nelonoel.github.io" # the base hostname & protocol for your site
+twitter_username: nelonoel
+github_username:  nelonoel
+contact_no: +632 916 837 5550
+
+# Build settings
+markdown: kramdown
+permalink: /:title

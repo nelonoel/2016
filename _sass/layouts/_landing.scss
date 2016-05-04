@@ -1,4 +1,5 @@
 .landing {
+	@include cf();
 	.services {
 		background: white url(/assets/img/services-bg.png) bottom center no-repeat;
 		background-size: $medium-landscape;
@@ -93,70 +94,63 @@
 
 	.works {
 		@include cf();
-		@include column(1);
-
 		.work {
-			background: $text-color center center no-repeat;
+			background: $vyllage-navy center center no-repeat;
+			background-blend-mode: hard-light;
 			background-size: cover;
 			box-sizing: border-box;
-			height: 240px;
+			height: 14em;
 			overflow: hidden;
-			padding: 3em;
+			padding: 2em;
 			position: relative;
 			text-align: center;
 
 			&:hover {
+				.logo {
+					opacity: 0;
+					transform: translateY(-50%) scale(0.8);
+				}
 				.overlay {
 					opacity: 1;
+					transform: scale(1);
 				}
 			}
 		}
 
 		.mana {
 			background-image: url(/assets/img/works/mana/banner.jpg);
-			.button {
-				@include button-color(darken($brand-color-2, 10%));
-			}
 		}
 
 		.devportal {
-			background-color: $voyager-violet;
 			background-image: url(/assets/img/works/devportal/banner.jpg);
-
-			.overlay {
-				background: rgba($voyager-violet, 0.98);
-			}
-			.button {
-				@include button-color(darken($voyager-yellow, 10%));
-			}
 		}
 
 		.barrel-and-stone {
-			background-color: $barrel-and-stone-brown;
 			background-image: url(/assets/img/works/barrel-and-stone/banner.jpg);
 
-			.overlay {
-				background: rgba($barrel-and-stone-brown, 0.98);
-			}
 			.button {
-				@include button-color(lighten($barrel-and-stone-brown, 15%));
+				@include button-color(lighten($vyllage-navy, 5%));
 			}
 		}
 
 		.logo {
 			@include vertical-center();
 			margin: auto;
-			max-height: 100px;
-			max-width: 250px;
+			max-height: 3.5em;
+			max-width: 9em;
+			opacity: 1;
 			text-align: center;
+			transform:  translateY(-50%) scale(1);
+			transition: all .3s ease;
 		}
 
 		.overlay {
 			@include overlay();
+			background: rgba(black, 0.25);
 			opacity: 0;
-			background: rgba($text-color, 0.98);
 			color: $inverted-text-color;
-			transition: opacity .3s ease;
+			transform: scale(1.1);
+			transition: all .4s ease;
 
 			.content {
 				@include vertical-center();
@@ -179,19 +173,25 @@
 	}
 
 	.contact {
-		background: white url(/assets/img/nelo.jpg) bottom center no-repeat;
-		background-size: contain;
-		clear: both;
-		font-size: 1.35em;
-		padding: 7em 0;
+		background: $inverted-text-color;
+		padding: 9em 0;
 		text-align: center;
+
+		.wrapper {
+			max-width: $medium-portrait;
+		}
+
+		h1 {
+			font-size: 2.5em;
+		}
 
 		p {
 			color: lighten($text-color, 5%);
-			font-size: 1.15em;
+			font-size: 1.35em;
 		}
 
 		.button {
+			font-size: 1.2em;
 			margin-top: 2em;
 		}
 	}

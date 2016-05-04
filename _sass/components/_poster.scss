@@ -22,6 +22,7 @@
 		@include vertical-center();
 		font-size: 1.35em;
 		margin: -2em auto 0 auto;
+		padding: 0 2rem;
 		max-width: $medium-landscape;
 
 		.category {
@@ -133,12 +134,14 @@
 			text-align: left;
 
 			.title {
+				color: darken($vyllage-navy, 4%);
 				font-size: 3em;
 				line-height: 1.3;
 				margin: 1em 0 0.125em;
 			}
 
 			.subheading {
+				color: lighten($vyllage-navy, 4%);
 				margin-bottom: 2.5em;
 			}
 		}

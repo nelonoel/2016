@@ -1,9 +1,10 @@
 .poster {
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 	color: $inverted-text-color !important;
 	display: inline-block;
-	height: $medium-portrait - 10;
+	height: $medium-portrait - 5;
 	margin-bottom: -0.35em;
 	overflow: hidden;
 	position: relative;
@@ -16,6 +17,7 @@
 		background-color: rgba(30, 30, 30, 0.6);
 		content: '';
 		display: inline-block;
+		z-index: 1;
 	}
 
 	.content {
@@ -24,6 +26,7 @@
 		margin: -2em auto 0 auto;
 		padding: 0 2rem;
 		max-width: $medium-landscape;
+		z-index: 2;
 
 		.category {
 			@include heading-text();
@@ -100,8 +103,13 @@
 	}
 
 	video {
-		min-width: 100%;
+		left: 50%;
+		top: 50%;
 		min-height: 100%;
+		min-width: 100%;
+		position: absolute;
+		transform: translateX(-50%) translateY(-50%);
+		z-index: 0;
 	}
 
 	&.inverted {
@@ -122,7 +130,11 @@
 .landing {
 	.poster {
 		background-image: url(/assets/img/landing-banner.jpg);
-		background-position: top;
+		background-size: cover;
+
+		video {
+			opacity: 0;
+		}
 
 		&:before {
 			background-image: linear-gradient(to bottom right, #ECFFFD,#E9F1FF);
@@ -134,16 +146,71 @@
 			text-align: left;
 
 			.title {
-				color: darken($vyllage-navy, 4%);
+				@include transition-slide-up(0s);
+				color: darken($vyllage-navy, 6%);
 				font-size: 3em;
 				line-height: 1.3;
 				margin: 1em 0 0.125em;
 			}
 
 			.subheading {
+				@include transition-slide-up(.2s);
 				color: lighten($vyllage-navy, 4%);
 				margin-bottom: 2.5em;
 			}
+
+			.button {
+				@include transition-slide-up(.4s);
+			}
+		}
+
+		&.enter {
+			video {
+				opacity: 1;
+			}
+			.content {
+				.title,
+				.subheading,
+				.button {
+					@include transition-slide-up-enter();
+				}
+			}
+		}
+
+		@include media-query($huge-portrait) {
+			background-size: $huge-portrait;
+		}
+
+		@include media-query($medium-landscape) {
+			font-size: 0.85em;
+		}
+
+		@include media-query($medium-portrait) {
+			height: auto;
+
+			.content {
+				@include remove-vertical-center();
+
+				.title {
+					font-size: 2.25em;
+				}
+				.subheading {
+					font-size: 1.05em;
+				}
+			}
+		}
+
+		@include media-query($small-landscape) {
+			.content {
+				text-align: center;
+				.title {
+					font-size: 1.5em;
+				}
+			}
+		}
+
+		@include media-query($tiny-landscape) {
+			background-size: cover;
 		}
 	}
 }

@@ -12,10 +12,43 @@
 	transform: translateY(-50%);
 }
 
+@mixin remove-vertical-center() {
+	padding: 4em 2rem;
+	position: relative;
+	top: 0;
+	transform: none;
+}
+
+@mixin pseudo-element() {
+	content: '';
+	display: inline-block;
+}
+
 @mixin overlay() {
 	bottom: 0;
 	left: 0;
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+@mixin transition-slide-up($delay) {
+	opacity: 0;
+	transform: translateY(1em);
+	transition: opacity .3s ease $delay,
+	 						transform .35s ease $delay;
+}
+
+@mixin transition-slide-up-enter() {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@mixin transition-bg-slide-up($y, $delay) {
+	background-position-y: $y;
+	transition: background-position 1.5s ease $delay;
+}
+
+@mixin transition-bg-slide-up-enter($y) {
+	background-position-y: $y;
 }

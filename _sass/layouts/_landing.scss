@@ -1,9 +1,15 @@
 .landing {
 	@include cf();
 	.services {
-		background: white url(/assets/img/services-bg.png) bottom center no-repeat;
+
+		background: white url(/assets/img/services-bg.png) center no-repeat;
+		@include transition-bg-slide-up(200%, 0s);
 		background-size: $medium-landscape;
 		padding: 4.5em 0;
+
+		&.entered {
+			@include transition-bg-slide-up-enter(bottom);
+		}
 
 		.service {
 			@include column(1/2, $gutter: 8);
@@ -12,8 +18,9 @@
 				@include heading-text();
 				font-size: 1.15em;
 				font-weight: bold;
-				letter-spacing: 10px;
+				letter-spacing: 0.5em;
 				text-transform: uppercase;
+				white-space: nowrap;
 
 				.icon {
 					margin-right: 0;
@@ -31,6 +38,30 @@
 				}
 			}
 		}
+
+		@include media-query($medium-landscape) {
+			background-size: 105%;
+		}
+
+		@include media-query($large-portrait) {
+			font-size: 0.9em;
+			padding: 3.5em 0;
+
+			.service {
+				@include column(1/2, $gutter: 6);
+			}
+		}
+
+		@include media-query($medium-portrait) {
+			.service {
+				@include column(1);
+				margin-bottom: 2.5em;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
 	}
 
 	.featured {
@@ -44,27 +75,47 @@
 			overflow: hidden;
 
 			&.left {
-				@include column(3/6);
+				@include column(6/12);
+				@include shift(-4/12);
 				background-image: url(/assets/img/works/vyllage/desktop-mock.png);
 				background-position-x: right;
+				@include transition-bg-slide-up(3em, 0.3s);
 			}
 			&.right {
-				@include column(1/6);
+				@include column(2/12);
 				background-image: url(/assets/img/works/vyllage/iphone-mock.png);
 				background-position-x: left;
+				@include transition-bg-slide-up(5em, 0s);
 			}
 		}
+
+		&.entered {
+			.mock {
+				@include transition-bg-slide-up-enter(top);
+			}
+			.logo,
+			.category,
+			h3, p,
+			.actions {
+				// @include transition-slide-up-enter();
+			}
+		}
+
 		.meta {
-			@include column(2/6);
+			@include column(4/12);
+			@include shift(6/12);
 			box-sizing: border-box;
-			padding: 0 2.5em;
+			padding: 0 2em;
 			margin-top: 4em;
 		}
 		.logo {
-			height: 1.65em;
-			width: auto;
+			// @include transition-slide-up(0.15s);
+			height: auto;
+			max-width: 7em;
+			width: 100%;
 		}
 		.category {
+			// @include transition-slide-up(0s);
 			@include heading-text();
 			border-left: lighten($muted-text-color, 15%) solid 3px;
 			color: $muted-text-color;
@@ -76,19 +127,89 @@
 			text-transform: uppercase;
 		}
 		h3 {
+			// @include transition-slide-up(0.3s);
 			color: lighten($text-color, 15%);
 			margin: 0.5em 0 1em 0;
 		}
 		p {
+			// @include transition-slide-up(0.45s);
 			color: lighten($text-color, 5%);
 			font-size: 1.25em;
 			margin-top: 0.5em;
 		}
 		.actions {
+			// @include transition-slide-up(0.6s);
 			margin-top: 3em;
 		}
-		.button {
-			@include button-color($vyllage-orange);
+
+		@include media-query($medium-landscape) {
+			.mock {
+				&.left {
+					@include column(4/12);
+					@include shift(-6/12);
+				}
+				&.right {
+					@include column(2/12);
+				}
+			}
+			.meta {
+				@include column(6/12);
+				@include shift(4/12);
+			}
+		}
+
+		@include media-query($large-portrait) {
+			padding-top: 3em;
+			.mock {
+				&.left {
+					display: none;
+					@include unshift();
+				}
+				&.right {
+					@include column(4/12);
+				}
+			}
+			.meta {
+				@include column(8/12);
+				@include unshift();
+			}
+		}
+
+		@include media-query($medium-portrait) {
+			.meta {
+				margin: 0 0 4em 0;
+			}
+			.category {
+				margin-bottom: 2em;
+			}
+		}
+
+		@include media-query($small-landscape) {
+			text-align: center;
+			.category {
+				border: none;
+				margin-bottom: 0.5em;
+			}
+			.mock {
+				height: $tiny-landscape;
+
+				&.left {
+					@include column(9/12);
+					background-size: $medium-portrait;
+					display: block;
+				}
+				&.right {
+					@include column(3/12);
+				}
+			}
+			.meta {
+				@include column(1);
+				font-size: 0.9em;
+
+				.logo {
+					max-width: 6em;
+				}
+			}
 		}
 	}
 
@@ -113,6 +234,37 @@
 				.overlay {
 					opacity: 1;
 					transform: scale(1);
+				}
+			}
+
+			@include media-query($medium-landscape) {
+				font-size: 0.825em;
+				height: 16em;
+
+				.logo {
+					max-height: 3em;
+					max-width: 7.5em;
+				}
+			}
+
+			@include media-query($large-portrait) {
+				&.mana,
+				&.barrel-and-stone {
+					@include column(1/2);
+				}
+				&.devportal {
+					@include column(1);
+				}
+			}
+
+			@include media-query($small-landscape) {
+				font-size: 0.9em;
+				height: 12.5em;
+
+				&.mana,
+				&.barrel-and-stone,
+				&.devportal {
+					@include column(1);
 				}
 			}
 		}
@@ -141,7 +293,7 @@
 			opacity: 1;
 			text-align: center;
 			transform:  translateY(-50%) scale(1);
-			transition: all .3s ease;
+			transition: all .25s ease;
 		}
 
 		.overlay {
@@ -150,7 +302,7 @@
 			opacity: 0;
 			color: $inverted-text-color;
 			transform: scale(1.1);
-			transition: all .4s ease;
+			transition: all .35s ease;
 
 			.content {
 				@include vertical-center();
@@ -159,26 +311,49 @@
 				p {
 					color: rgba($inverted-text-color, 0.75);
 					font-size: 1.15em;
+					pointer-events: none;
 				}
 			}
 
 			.title {
 				@include heading-text();
+				pointer-events: none;
 			}
 
 			.actions {
+				font-size: 1.15em;
 				margin-top: 1.75em;
 			}
 		}
 	}
 
 	.contact {
-		background: $inverted-text-color;
-		padding: 9em 0;
+		background-color: white;
+		overflow: hidden;
+		padding: 10em 0;
+		position: relative;
 		text-align: center;
+		z-index: 0;
+
+		&:before {
+			@include pseudo-element();
+			@include overlay();
+			background: white url(/assets/img/workspace.jpg) bottom center no-repeat;
+			background-size: $medium-landscape;
+			transform: scale(1.1);
+			transform-origin: top center;
+			transition: transform 2s ease .2s;
+			z-index: 1;
+		}
+
+		&.enter:before {
+			transform: scale(1);
+		}
 
 		.wrapper {
 			max-width: $medium-portrait;
+			position: relative;
+			z-index: 2;
 		}
 
 		h1 {
@@ -188,11 +363,22 @@
 		p {
 			color: lighten($text-color, 5%);
 			font-size: 1.35em;
+			margin-top: 0.15em;
 		}
 
 		.button {
 			font-size: 1.2em;
 			margin-top: 2em;
+		}
+
+		@include media-query($medium-landscape) {
+			font-size: 0.9em;
+		}
+
+		@include media-query($small-landscape) {
+			h1 {
+				font-size: 1.75em;
+			}
 		}
 	}
 }

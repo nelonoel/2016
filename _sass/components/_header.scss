@@ -1,3 +1,5 @@
+$nav-breakpoint: $small-landscape;
+
 header {
 	background: $inverted-text-color;
 	width: 100%;
@@ -29,7 +31,7 @@ header {
 		float: left;
 
 		a {
-			padding: 1em 0;
+			padding: 1.35em 0;
 		}
 	}
 
@@ -51,9 +53,139 @@ header {
 				a {
 					font-size: 1.15em;
 					font-weight: 700;
-					padding: 1.4em 1em;
+					padding: 1.35em 1em;
 				}
 			}
 		}
+
+		@include media-query($nav-breakpoint) {
+			background: rgba(white, 0.98);
+			// display: inline-block;
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 3;
+
+			.nav-wrapper {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			}
+
+			.nav-center {
+				display: table;
+				height: 100%;
+				width: 100%;
+			}
+
+			ul {
+				display: table-cell;
+				padding: 0;
+				vertical-align: middle;
+
+				li {
+					display: block;
+					font-size: 1.25em;
+					opacity: 0;
+					padding: 0.75em;
+					text-align: center;
+					transform: translateY(1em);
+
+					a {
+						font-size: 1.25em;
+						padding: 0;
+					}
+				}
+			}
+
+			&.modal-open {
+				ul {
+					$n: 6;
+					@for $i from 0 to $n {
+						li:nth-child(#{$i}){
+							opacity: 1;
+							transform: translateY(0);
+							transition: all .2s ease #{$i*.1}s;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+$bar-gap: 10px;
+$bar-thickness: 4px;
+#nav-icon {
+	cursor: pointer;
+	display: none;
+	height: $bar-gap * 2 +  $bar-thickness;
+	opacity: 0.9;
+	position: absolute;
+	right: 2rem;
+	top: $bar-gap * 2.5;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	width: 25px;
+	z-index: 5;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	span {
+		background: darken($text-color, 5%);
+		display: block;
+		height: $bar-thickness;
+		left: 0;
+		opacity: 1;
+		position: absolute;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+		width: 100%;
+
+		&:nth-child(1) {
+			top: 0px;
+		}
+		&:nth-child(2),
+		&:nth-child(3) {
+			top: $bar-gap;
+		}
+		&:nth-child(4) {
+			top: $bar-gap * 2;
+		}
+	}
+	&.modal-open {
+		span {
+			&:nth-child(1) {
+				left: 50%;
+				opacity: 0;
+				top: $bar-gap;
+				width: 0%;
+			}
+			&:nth-child(2) {
+				transform: rotate(45deg);
+			}
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+			&:nth-child(4) {
+				left: 50%;
+				opacity: 0;
+				top: $bar-gap;
+				width: 0%;
+			}
+		}
+	}
+
+	@include media-query($nav-breakpoint) {
+		display: inline-block;
 	}
 }

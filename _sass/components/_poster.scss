@@ -14,6 +14,7 @@
 	&.dim:before,
 	&:before {
 		@include overlay();
+		bottom: -1px;
 		background-color: rgba(30, 30, 30, 0.6);
 		content: '';
 		display: inline-block;
@@ -177,10 +178,6 @@
 			}
 		}
 
-		@include media-query($huge-portrait) {
-			background-size: $huge-portrait;
-		}
-
 		@include media-query($medium-landscape) {
 			font-size: 0.85em;
 		}
@@ -207,10 +204,6 @@
 					font-size: 1.5em;
 				}
 			}
-		}
-
-		@include media-query($tiny-landscape) {
-			background-size: cover;
 		}
 	}
 }

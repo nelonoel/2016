@@ -1,8 +1,11 @@
 ---
+title: Another Test Post!
+date: 2015-07-14 08:08:36 Z
+categories:
+- blog
+- jekyll
+- update
 layout: post
-title:  "Another Test Post!"
-date:   2015-07-14 08:08:36
-categories: jekyll update
 banner_image: "/assets/img/post-bg-03.jpg"
 ---
 

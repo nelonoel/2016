@@ -1,14 +1,21 @@
-# Site settings
+---
 title: Nelo | Freelance Web Developer & UI Designer
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 name: Aaron Noel De Leon
 email: aaronnoeldeleon@gmail.com
-description: I work remotely with startups and agencies around the world to transform ideas into great products for web and mobile.
-baseurl: "/" # the subpath of your site, e.g. /blog/
-url: "http://nelonoel.github.io" # the base hostname & protocol for your site
+description: I work remotely with startups and agencies around the world to transform
+  ideas into great products for web and mobile.
+baseurl: "/"
+url: http://nelonoel.github.io
 twitter_username: nelonoel
-github_username:  nelonoel
-contact_no: +632 916 837 5550
-
-# Build settings
+github_username: nelonoel
+contact_no: "+632 916 837 5550"
 markdown: kramdown
-permalink: /:title
+permalink: "/:title"

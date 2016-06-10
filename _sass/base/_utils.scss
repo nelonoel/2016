@@ -43,12 +43,3 @@
 	opacity: 1;
 	transform: translateY(0);
 }
-
-@mixin transition-bg-slide-up($y, $delay) {
-	background-position-y: $y;
-	transition: background-position 1.5s ease $delay;
-}
-
-@mixin transition-bg-slide-up-enter($y) {
-	background-position-y: $y;
-}

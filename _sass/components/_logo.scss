@@ -31,6 +31,16 @@
 
 		&.busy {
 			background: $brand-color;
+
+			.tooltip {
+				background: $brand-color;
+				border-bottom-color: darken($brand-color, 10%);
+
+				&:before {
+					border-bottom-color: $brand-color;
+					box-shadow: 0 1px 0 darken($brand-color, 10%);
+				}
+			}
 		}
 
 		.tooltip {

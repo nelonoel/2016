@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'sans';
+  src: local('AvenirNext-Medium'),
+    url('/assets/fonts/sans/sans.eot?#iefix') format('embedded-opentype'),
+    url('/assets/fonts/sans/sans.woff') format('woff'),
+    url('/assets/fonts/sans/sans.ttf')  format('truetype'),
+    url('/assets/fonts/sans/sans.svg#sans') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
 @mixin base-text() {
   font-family: $base-font-family;
 }
@@ -34,22 +45,30 @@ ul, ol, dl, figure,
 
 h1, h2, h3, h4, h5, h6 {
   @include heading-text();
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
 }
 
-p {
+p,
+ol,
+ul {
   margin: 0 auto $spacing-unit / 2 auto;
 
   a {
-    background-image: linear-gradient(to bottom, transparent 98%, $text-color 2%);
+    border-bottom: $muted-text-color solid 1px;
     color: $text-color;
     transition: none;
 
     &:hover {
-      background-image: linear-gradient(to bottom, transparent 98%, $brand-color 2%);
-      color: $brand-color;
+      border-color: $brand-color;
+      color: darken($text-color, 10%);
       text-decoration: none;
     }
+  }
+}
+
+p {
+  a:hover {
+    border-width: 2px;
   }
 }

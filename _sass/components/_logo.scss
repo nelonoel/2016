@@ -54,9 +54,10 @@
 			font-weight: bold;
 			left: 1.4em;
 			opacity: 0;
-			padding: 0.4em 0.7em;
+			padding: 0.5em 0.7em 0.3em;
 			pointer-events: none;
 			position: absolute;
+			text-shadow: 0 1px 0 rgba(0,0,0,0.1);
 			text-transform: uppercase;
 			transform: scale(0) translateX(-1.75em);
 			transform-origin: bottom left;

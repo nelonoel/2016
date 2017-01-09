@@ -34,6 +34,8 @@ footer {
 
 		.value {
 			@include column(7/8);
+			font-weight: 600;
+			line-height: 1.6;
 		}
 	}
 
@@ -43,13 +45,14 @@ footer {
 		.message {
 			display: block;
 			font-size: 0.85em;
-			margin: 0.35em 0;
+			font-weight: 600;
+			margin: 0.65em 0 0.35em;
 		}
 
 		.last-update {
 			color: $gray-color-dark;
 			font-size: 0.75em;
-			font-weight: bold;
+			font-weight: 600;
 		}
 	}
 	.contact {

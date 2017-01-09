@@ -1,6 +1,7 @@
 ---
-title: Nelo | Freelance Web Developer & UI Designer
+title: Nelo | Web Developer & UI Designer
 timezone: UTC
+available: false
 collections:
   posts:
     title: Posts
@@ -13,6 +14,7 @@ email: aaronnoeldeleon@gmail.com
 description: I work remotely with startups and agencies around the world to transform
   ideas into great products for web and mobile.
 baseurl: "/"
+port: 1515
 url: http://nelonoel.github.io
 twitter_username: nelonoel
 github_username: nelonoel

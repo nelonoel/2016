@@ -11,12 +11,13 @@
 			label {
 				@include heading-text();
 				font-size: 1.15em;
-				font-weight: bold;
+				font-weight: 600;
 				letter-spacing: 0.5em;
 				text-transform: uppercase;
 				white-space: nowrap;
 
 				.icon {
+					letter-spacing: 0.15em;
 					margin-right: 0;
 				}
 			}
@@ -71,12 +72,12 @@
 			&.left {
 				@include column(6/12);
 				@include shift(-4/12);
-				background-image: url(/assets/img/works/vyllage/desktop-mock.png);
+				background-image: url(/assets/img/works/phaxio/desktop-mock.png);
 				background-position-x: right;
 			}
 			&.right {
 				@include column(2/12);
-				background-image: url(/assets/img/works/vyllage/iphone-mock.png);
+				background-image: url(/assets/img/works/phaxio/iphone-mock.png);
 				background-position-x: left;
 			}
 		}
@@ -110,7 +111,7 @@
 			border-left: lighten($muted-text-color, 15%) solid 3px;
 			color: $muted-text-color;
 			font-size: 0.8em;
-			font-weight: bold;
+			font-weight: 600;
 			letter-spacing: 3px;
 			margin-bottom: 3em;
 			padding: 0.25em 1em;
@@ -206,7 +207,7 @@
 	.works {
 		@include cf();
 		.work {
-			background: $vyllage-navy center center no-repeat;
+			background: desaturate(darken($vyllage-blue, 30%), 30%) center center no-repeat;
 			background-blend-mode: hard-light;
 			background-size: cover;
 			box-sizing: border-box;
@@ -238,25 +239,42 @@
 			}
 
 			@include media-query($large-portrait) {
-				&.mana,
-				&.barrel-and-stone {
-					@include column(1/2);
-				}
-				&.devportal {
+				@include column(1/2);
+
+				&.carful {
 					@include column(1);
 				}
 			}
 
 			@include media-query($small-landscape) {
+				@include column(1);
 				font-size: 0.9em;
 				height: 12.5em;
-
-				&.mana,
-				&.barrel-and-stone,
-				&.devportal {
-					@include column(1);
-				}
 			}
+		}
+
+		.bugwolf {
+			background-image: url(/assets/img/works/bugwolf/banner.jpg);
+		}
+
+		.auto-exam {
+			background-image: url(/assets/img/works/auto-exam/banner.jpg);
+		}
+
+		.faster-forward {
+			background-image: url(/assets/img/works/faster-forward/banner.jpg);
+		}
+
+		.carful {
+			background-image: url(/assets/img/works/carful/banner.jpg);
+		}
+
+		.vyllage {
+			background-image: url(/assets/img/works/vyllage/banner.jpg);
+		}
+
+		.movie-tv {
+			background-image: url(/assets/img/works/movie-tv/banner.jpg);
 		}
 
 		.mana {
@@ -269,10 +287,6 @@
 
 		.barrel-and-stone {
 			background-image: url(/assets/img/works/barrel-and-stone/banner.jpg);
-
-			.button {
-				@include button-color(lighten($vyllage-navy, 5%));
-			}
 		}
 
 		.logo {

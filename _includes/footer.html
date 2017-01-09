@@ -3,17 +3,29 @@
 	  <div class="status">
 	    <a href="/">
         <div class="icon icon-logo inverted logo">
-          <div class="busy dot">
-            <div class="tooltip">Busy</div>
+          <div class="{% if site.available %}available{% else %}busy{% endif %} dot">
+            <div class="tooltip">{% if site.available %}available{% else %}busy{% endif %}</div>
           </div>
         </div>
       </a>
 	    <div class="message">
-	    	<a href="mailto:aaronnoeldeleon@gmail.com">I'm currently <strong>busy</strong> working on some awesome projects. Say hi, maybe?</a>
+	    	<a href="mailto:aaronnoeldeleon@gmail.com">
+	    		{% if site.available %}
+	    			I'm currently available to work on new projects. Feel free to send an e-mail!
+	    		{% else %}
+	    			I'm currently working on something awesome. Still, feel free to reach out!
+	    		{% endif %}
+	    	</a>
 	    </div>
-	    <div class="last-update">Last updated: September 5, 2016</div>
+	    <div class="last-update">Updated: January 4, 2017</div>
 	  </div>
 	  <div class="contact">
+	  	<div class="field">
+	  		<label>
+	  			<i class="icon icon-mail"></i>
+	  		</label>
+	  		<a href="mailto:aaronnoeldeleon@gmail.com" class="value">aaronnoeldeleon@gmail.com</a>
+	  	</div>
 	  	<div class="field">
 	  		<label>
 	  			<i class="icon icon-pin"></i>
@@ -25,12 +37,6 @@
 	  			<i class="icon icon-phone"></i>
 	  		</label>
 	  		<a href="tel:+639168375550" class="value">+63 916 837 5550</a>
-	  	</div>
-	  	<div class="field">
-	  		<label>
-	  			<i class="icon icon-mail"></i>
-	  		</label>
-	  		<a href="mailto:aaronnoeldeleon@gmail.com" class="value">aaronnoeldeleon@gmail.com</a>
 	  	</div>
 	  </div>
 	  <div class="elsewhere">
@@ -56,7 +62,7 @@
 	  		<label>
 	  			<i class="icon icon-file"></i>
 	  		</label>
-	  		<a href="/assets/pdf/cv.pdf" target="blank" class="value"><span class="verb">Download </span>CV</a>
+	  		<a href="/cv.pdf" target="blank" class="value"><span class="verb">Download </span>CV</a>
 	  	</div>
 	  </div>
   </div>

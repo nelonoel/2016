@@ -49,10 +49,14 @@ blockquote {
   border-left: 4px solid $gray-color-light;
   color: $muted-text-color;
   font-family: $heading-font-family;
-  font-size: 1.4em;
+  font-size: 1.25em;
   font-weight: 400;
   margin-left: 0;
   padding: 0.5em 1em;
+
+  p {
+    margin: 0 !important;
+  }
 }
 
 // Code formatting

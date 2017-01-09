@@ -11,6 +11,11 @@
 	text-align: center;
 	width: 100%;
 
+	&.half-width {
+		float: left;
+		width: 50%;
+	}
+
 	&.dim:before,
 	&:before {
 		@include overlay();
@@ -35,6 +40,7 @@
 			font-size: 0.6em;
 			font-weight: 600;
 			letter-spacing: 5px;
+			margin-bottom: 0.75em;
 			text-transform: uppercase;
 		}
 
@@ -66,6 +72,8 @@
 		bottom: 0;
 		left: 0;
 
+		z-index: 1;
+
 		.author {
 			.avatar {
 				background-color: white;
@@ -84,21 +92,18 @@
 				margin-top: 0.75em;
 				text-transform: uppercase;
 			}
-			.date {
-				display: inline;
-				font-size: 0.75em;
-				letter-spacing: 2px;
-			}
+			.date,
 			.length {
 				display: inline;
 				font-size: 0.75em;
+				font-weight: 600;
 				letter-spacing: 2px;
-
-				&:before {
-					content: '•';
-					display: inline-block;
-					margin: 0 0.75em 0 0.6em;
-				}
+				opacity: 0.6;
+			}
+			.length:before {
+				content: '•';
+				display: inline-block;
+				margin: 0 0.75em 0 0.6em;
 			}
 		}
 	}
@@ -144,12 +149,13 @@
 		}
 		.content {
 			max-width: $medium-landscape;
-			text-align: left;
+			text-align: center;
 
 			.title {
 				@include transition-slide-up(0s);
 				color: darken($vyllage-navy, 6%);
-				font-size: 3em;
+				font-size: 2.75em;
+				font-weight: 600;
 				line-height: 1.3;
 				margin: 1em 0 0.125em;
 			}

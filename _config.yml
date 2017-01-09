@@ -1,7 +1,6 @@
 ---
 title: Nelo | Web Developer & UI Designer
 timezone: UTC
-available: false
 collections:
   posts:
     title: Posts
@@ -9,6 +8,7 @@ collections:
   uploads:
     title: Uploads
     output: true
+available: false
 name: Aaron Noel De Leon
 email: aaronnoeldeleon@gmail.com
 description: I work remotely with startups and agencies around the world to transform

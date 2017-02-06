@@ -247,7 +247,7 @@
 			}
 
 			@include media-query($small-landscape) {
-				// @include column(1);
+				@include column(1);
 				font-size: 0.9em;
 				height: 12.5em;
 			}

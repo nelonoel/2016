@@ -1,4 +1,4 @@
-$nav-breakpoint: $small-landscape;
+$nav-breakpoint: 576px;
 
 header {
 	background: $inverted-text-color;
@@ -32,7 +32,7 @@ header {
 		float: left;
 
 		a {
-			padding: 1.35em 0;
+			padding: 1.2em 0 1.5em;
 		}
 	}
 
@@ -52,9 +52,11 @@ header {
 				}
 
 				a {
-					font-size: 1.15em;
+					font-size: 0.85em;
 					font-weight: 600;
-					padding: 1.35em 1.15em;
+					letter-spacing: 0.125em;
+					padding: 2.1em 1.15em 2em;
+					text-transform: uppercase;
 				}
 			}
 		}

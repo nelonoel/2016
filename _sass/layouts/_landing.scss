@@ -211,7 +211,7 @@
 			background-blend-mode: hard-light;
 			background-size: cover;
 			box-sizing: border-box;
-			height: 14em;
+			height: 15em;
 			overflow: hidden;
 			padding: 2em;
 			position: relative;
@@ -247,7 +247,7 @@
 			}
 
 			@include media-query($small-landscape) {
-				@include column(1);
+				// @include column(1);
 				font-size: 0.9em;
 				height: 12.5em;
 			}
@@ -374,7 +374,7 @@
 
 		@include media-query($small-landscape) {
 			h1 {
-				font-size: 1.75em;
+				font-size: 1.55em;
 			}
 		}
 	}

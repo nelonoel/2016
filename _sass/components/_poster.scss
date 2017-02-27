@@ -135,6 +135,7 @@
 
 .landing {
 	.poster {
+		background-color: #D2E2EB;
 		background-image: url(/assets/img/landing-banner.jpg);
 		background-size: cover;
 
@@ -205,6 +206,10 @@
 		}
 
 		@include media-query($small-landscape) {
+			video {
+				display: none;
+			}
+
 			.content {
 				text-align: center;
 				.title {

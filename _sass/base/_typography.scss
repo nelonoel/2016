@@ -1,3 +1,11 @@
+::selection {
+  background: rgba($highlight-color, 0.75);
+}
+
+::-moz-selection {
+  background: rgba($highlight-color, 0.75);
+}
+
 @font-face {
   font-family: 'sans';
   src: local('AvenirNext-Medium'),

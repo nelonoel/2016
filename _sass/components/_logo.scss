@@ -11,18 +11,17 @@
 	&:hover .dot .tooltip {
 		opacity: 1;
 		transform: scale(1) translateX(0);
-		transition-delay: .2s;
+		transition-delay: 0.2s;
 	}
-
 
 	.dot {
 		background: $brand-color-2;
 		border-radius: 100%;
 		display: inline-block;
 		height: 0.25em;
-    margin-bottom: -0.0625em;
-    margin-left: 0.125em;
-    position: relative;
+		margin-bottom: -0.0625em;
+		margin-left: -0.375em;
+		position: relative;
 		width: 0.25em;
 
 		&.available {
@@ -57,11 +56,11 @@
 			padding: 0.5em 0.7em 0.3em;
 			pointer-events: none;
 			position: absolute;
-			text-shadow: 0 1px 0 rgba(0,0,0,0.1);
+			text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 			text-transform: uppercase;
 			transform: scale(0) translateX(-1.75em);
 			transform-origin: bottom left;
-			transition: all .2s ease;
+			transition: all 0.2s ease;
 			white-space: nowrap;
 
 			&:before {
@@ -70,7 +69,7 @@
 				border-right: 0.4em solid transparent;
 				bottom: 0;
 				box-shadow: 0 1px 0 darken($brand-color-2, 10%);
-				content: '';
+				content: "";
 				display: inline-block;
 				height: 0;
 				left: -0.3em;

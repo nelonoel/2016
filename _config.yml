@@ -10,12 +10,12 @@ collections:
     output: true
 available: false
 name: Aaron Noel De Leon
-email: hello@nelo.ph
+email: here@nelo.is
 description: I work remotely with startups and agencies around the world to transform
   ideas into great products for web and mobile.
 baseurl: "/"
 port: 1515
-url: http://nelo.ph
+url: https://open.nelo.is
 twitter_username: nelonoel
 github_username: nelonoel
 contact_no: "+632 916 837 5550"

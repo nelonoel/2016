@@ -77,7 +77,7 @@
 		.author {
 			.avatar {
 				background-color: white;
-				background-image: url(assets/img/avatar.jpg);
+				background-image: url(/assets/img/avatar.jpg);
 				background-size: cover;
 				border: white solid 1px;
 				border-radius: 50%;
@@ -136,7 +136,7 @@
 .landing {
 	.poster {
 		background-color: #d2e2eb;
-		background-image: url(assets/img/landing-banner.jpg);
+		background-image: url(/assets/img/landing-banner.jpg);
 		background-size: cover;
 
 		video {

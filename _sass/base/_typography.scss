@@ -9,10 +9,10 @@
 @font-face {
 	font-family: "sans";
 	src: local("AvenirNext-Medium"),
-		url("assets/fonts/sans/sans.eot?#iefix") format("embedded-opentype"),
-		url("assets/fonts/sans/sans.woff") format("woff"),
-		url("assets/fonts/sans/sans.ttf") format("truetype"),
-		url("assets/fonts/sans/sans.svg#sans") format("svg");
+		url("/assets/fonts/sans/sans.eot?#iefix") format("embedded-opentype"),
+		url("/assets/fonts/sans/sans.woff") format("woff"),
+		url("/assets/fonts/sans/sans.ttf") format("truetype"),
+		url("/assets/fonts/sans/sans.svg#sans") format("svg");
 	font-weight: 600;
 	font-style: normal;
 }

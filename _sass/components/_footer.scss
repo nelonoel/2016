@@ -1,6 +1,6 @@
 footer {
 	@include heading-text();
-	background: $footer-background url(assets/img/footer-bg.jpg) center center
+	background: $footer-background url(/assets/img/footer-bg.jpg) center center
 		no-repeat;
 	background-size: cover;
 	color: $footer-color;

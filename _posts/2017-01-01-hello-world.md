@@ -6,7 +6,7 @@ categories:
 - thoughts
 layout: post
 subheading: Past. Present. Future.
-banner_image: "assets/img/post-bg-04.jpg"
+banner_image: "/assets/img/post-bg-04.jpg"
 ---
 
 ### This is my first post ever.

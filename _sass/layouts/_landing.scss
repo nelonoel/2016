@@ -1,7 +1,7 @@
 .landing {
 	@include cf();
 	.services {
-		background: white urlassets/img/services-bg.png) bottom center no-repeat;
+		background: white url(assets/img/services-bg.png) bottom center no-repeat;
 		background-size: $medium-landscape;
 		padding: 4.5em 0;
 
@@ -72,12 +72,12 @@
 			&.left {
 				@include column(6/12);
 				@include shift(-4/12);
-				background-image: urlassets/img/works/phaxio/desktop-mock.png);
+				background-image: url(assets/img/works/phaxio/desktop-mock.png);
 				background-position-x: right;
 			}
 			&.right {
 				@include column(2/12);
-				background-image: urlassets/img/works/phaxio/iphone-mock.png);
+				background-image: url(assets/img/works/phaxio/iphone-mock.png);
 				background-position-x: left;
 			}
 		}

@@ -1,82 +1,97 @@
 ::selection {
-  background: rgba($highlight-color, 0.75);
+	background: rgba($highlight-color, 0.75);
 }
 
 ::-moz-selection {
-  background: rgba($highlight-color, 0.75);
+	background: rgba($highlight-color, 0.75);
 }
 
 @font-face {
-  font-family: 'sans';
-  src: local('AvenirNext-Medium'),
-    url('/assets/fonts/sans/sans.eot?#iefix') format('embedded-opentype'),
-    url('/assets/fonts/sans/sans.woff') format('woff'),
-    url('/assets/fonts/sans/sans.ttf')  format('truetype'),
-    url('/assets/fonts/sans/sans.svg#sans') format('svg');
-  font-weight: 600;
-  font-style: normal;
+	font-family: "sans";
+	src: local("AvenirNext-Medium"),
+		url("assets/fonts/sans/sans.eot?#iefix") format("embedded-opentype"),
+		url("assets/fonts/sans/sans.woff") format("woff"),
+		url("assets/fonts/sans/sans.ttf") format("truetype"),
+		url("assets/fonts/sans/sans.svg#sans") format("svg");
+	font-weight: 600;
+	font-style: normal;
 }
 
 @mixin base-text() {
-  font-family: $base-font-family;
+	font-family: $base-font-family;
 }
 
 @mixin heading-text() {
-  font-family: $heading-font-family;
+	font-family: $heading-font-family;
 }
 
 * {
 	text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
 	@include base-text();
-  background-color: $background-color;
-  color: $text-color;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+	background-color: $background-color;
+	color: $text-color;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
 
-  &.modal-open {
-    overflow: hidden;
-  }
+	&.modal-open {
+		overflow: hidden;
+	}
 }
 
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
 %vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
+	margin-bottom: $spacing-unit / 2;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @include heading-text();
-  font-weight: 600;
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@include heading-text();
+	font-weight: 600;
+	margin: 0;
 }
 
 p,
 ol,
 ul {
-  margin: 0 auto $spacing-unit / 2 auto;
+	margin: 0 auto $spacing-unit / 2 auto;
 
-  a {
-    border-bottom: $muted-text-color solid 1px;
-    color: $text-color;
-    transition: none;
+	a {
+		border-bottom: $muted-text-color solid 1px;
+		color: $text-color;
+		transition: none;
 
-    &:hover {
-      border-color: $brand-color;
-      color: darken($text-color, 10%);
-      text-decoration: none;
-    }
-  }
+		&:hover {
+			border-color: $brand-color;
+			color: darken($text-color, 10%);
+			text-decoration: none;
+		}
+	}
 }
 
 p {
-  a:hover {
-    border-width: 2px;
-  }
+	a:hover {
+		border-width: 2px;
+	}
 }

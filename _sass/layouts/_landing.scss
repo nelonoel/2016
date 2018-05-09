@@ -1,7 +1,7 @@
 .landing {
 	@include cf();
 	.services {
-		background: white url(/assets/img/services-bg.png) bottom center no-repeat;
+		background: white url(assets/img/services-bg.png) bottom center no-repeat;
 		background-size: $medium-landscape;
 		padding: 4.5em 0;
 
@@ -72,21 +72,21 @@
 			&.left {
 				@include column(6/12);
 				@include shift(-4/12);
-				background-image: url(/assets/img/works/phaxio/desktop-mock.png);
+				background-image: url(assets/img/works/phaxio/desktop-mock.png);
 				background-position-x: right;
 			}
 			&.right {
 				@include column(2/12);
-				background-image: url(/assets/img/works/phaxio/iphone-mock.png);
+				background-image: url(assets/img/works/phaxio/iphone-mock.png);
 				background-position-x: left;
 			}
 		}
 
-
 		&.entered {
 			.logo,
 			.category,
-			h3, p,
+			h3,
+			p,
 			.actions {
 				// @include transition-slide-up-enter();
 			}
@@ -207,7 +207,8 @@
 	.works {
 		@include cf();
 		.work {
-			background: desaturate(darken($vyllage-blue, 30%), 30%) center center no-repeat;
+			background: desaturate(darken($vyllage-blue, 30%), 30%) center center
+				no-repeat;
 			background-blend-mode: hard-light;
 			background-size: cover;
 			box-sizing: border-box;
@@ -254,39 +255,39 @@
 		}
 
 		.bugwolf {
-			background-image: url(/assets/img/works/bugwolf/banner.jpg);
+			background-image: url(assets/img/works/bugwolf/banner.jpg);
 		}
 
 		.auto-exam {
-			background-image: url(/assets/img/works/auto-exam/banner.jpg);
+			background-image: url(assets/img/works/auto-exam/banner.jpg);
 		}
 
 		.faster-forward {
-			background-image: url(/assets/img/works/faster-forward/banner.jpg);
+			background-image: url(assets/img/works/faster-forward/banner.jpg);
 		}
 
 		.carful {
-			background-image: url(/assets/img/works/carful/banner.jpg);
+			background-image: url(assets/img/works/carful/banner.jpg);
 		}
 
 		.vyllage {
-			background-image: url(/assets/img/works/vyllage/banner.jpg);
+			background-image: url(assets/img/works/vyllage/banner.jpg);
 		}
 
 		.movie-tv {
-			background-image: url(/assets/img/works/movie-tv/banner.jpg);
+			background-image: url(assets/img/works/movie-tv/banner.jpg);
 		}
 
 		.mana {
-			background-image: url(/assets/img/works/mana/banner.jpg);
+			background-image: url(assets/img/works/mana/banner.jpg);
 		}
 
 		.devportal {
-			background-image: url(/assets/img/works/devportal/banner.jpg);
+			background-image: url(assets/img/works/devportal/banner.jpg);
 		}
 
 		.barrel-and-stone {
-			background-image: url(/assets/img/works/barrel-and-stone/banner.jpg);
+			background-image: url(assets/img/works/barrel-and-stone/banner.jpg);
 		}
 
 		.logo {
@@ -296,8 +297,8 @@
 			max-width: 9em;
 			opacity: 1;
 			text-align: center;
-			transform:  translateY(-50%) scale(1);
-			transition: all .25s ease;
+			transform: translateY(-50%) scale(1);
+			transition: all 0.25s ease;
 		}
 
 		.overlay {
@@ -306,7 +307,7 @@
 			opacity: 0;
 			color: $inverted-text-color;
 			transform: scale(1.1);
-			transition: all .35s ease;
+			transition: all 0.35s ease;
 
 			.content {
 				@include vertical-center();
@@ -342,7 +343,7 @@
 		&:before {
 			@include pseudo-element();
 			@include overlay();
-			background: white url(/assets/img/workspace.jpg) bottom center no-repeat;
+			background: white url(assets/img/workspace.jpg) bottom center no-repeat;
 			background-size: $medium-landscape;
 			z-index: 1;
 		}
